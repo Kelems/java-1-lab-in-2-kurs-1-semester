@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Просмотр арифметической прогрессии</title>
+    </head>
+    <body>
+        <a href="/">На главную</a>
+        <h1>Просмотр арифметической прогрессии: <span th:text="${arithmetic.arithmeticProgressionId}"></span></h1>
+
+        <p>Первичный шаг:    <span th:text="${arithmetic.startTerms.TermId}"></span></p>
+        <p>Разность:         <span th:text="${arithmetic.step}"></span></p>
+        <p>Количество шагов: <span th:text="${arithmetic.terms}"></span></p>
+
+        <a href="/arithmetic/list">Назад к списку</a><br>
+        <a th:href="@{/startTerms/{id}(id=${arithmetic.startTerms.termId})}">Просмотреть связанный первичный шаг</a>
+    </body>
+</html>

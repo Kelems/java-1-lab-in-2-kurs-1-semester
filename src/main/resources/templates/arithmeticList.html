@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Арифметические прогрессии</title>
+    </head>
+    <body>
+        <h1>Арифметические прогрессии</h1>
+
+        <a href="/" class="button">На главную</a><br>
+        <a href="/arithmetic/add" class="button">Добавить геометрическую прогрессию</a><br>
+
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ID первичного шага</th>
+                    <th>(Первичный шаг)</th>
+                    <th>Разность</th>
+                    <th>Количество шагов</th>
+                    <th>Просмотр строки</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="arithmetic : ${arithmeticProgressions}">
+                    <td th:text="${arithmetic.arithmeticProgressionId}"></td>
+                    <td th:text="${arithmetic.startTerms.termId}"></td>
+                    <td th:text="${arithmetic.startTerms.startTerm}"></td>
+                    <td th:text="${arithmetic.step}"></td>
+                    <td th:text="${arithmetic.terms}"></td>
+                    <td><a th:href="@{/arithmetic/{id}(id=${arithmetic.arithmeticProgressionId})}">Открыть</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

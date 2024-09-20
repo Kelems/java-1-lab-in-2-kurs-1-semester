@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Добавить первичный шаг</title>
+    </head>
+    <body>
+        <a href="/">На главную</a>
+        <h1>Добавить первичный шаг</h1>
+        <form th:action="@{/startTerms/add}" th:object="${startTerms}" method="post">
+
+            <label for="startTerm">Первичный шаг:</label>
+            <input type="text" th:field="*{startTerm}" id="startTerm" required><br>
+
+            <label for="startName">Название шага:</label>
+            <input type="text" th:field="*{startName}" id="startName" required><br>
+            <button type="submit">Добавить</button>
+        </form>
+    </body>
+</html>

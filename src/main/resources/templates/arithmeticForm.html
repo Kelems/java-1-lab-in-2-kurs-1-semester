@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Добавить арифметическую прогрессию</title>
+    </head>
+    <body>
+        <a href="/">На главную</a>
+        <h1>Добавить арифметическую прогрессию</h1>
+        <form th:action="@{/arithmetic/add}" th:object="${arithmeticProgression}" method="post">
+
+            <label for="startTerm">Первичный шаг:</label>
+            <input type="text" th:field="*{startTerms.startTerm}" id="startTerm" required><br>
+
+            <label for="step">Шаг:</label>
+            <input type="text" th:field="*{step}" id="step" required><br>
+
+            <label for="terms">Количество шагов:</label>
+            <input type="text" th:field="*{terms}" id="terms" required><br>
+
+            <button type="submit">Добавить</button>
+        </form>
+    </body>
+</html>

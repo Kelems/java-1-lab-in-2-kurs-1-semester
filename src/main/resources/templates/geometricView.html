@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Просмотр геометрической прогрессии</title>
+  </head>
+  <body>
+    <a href="/">На главную</a><br>
+    <a href="/geometric/list">Назад к списку</a>  <br>
+
+    <h1>Просмотр геометрической прогрессии: <span th:text="${geometric.geometricProgressionId}"></span></h1>
+
+    <p>Первичный шаг:     <span th:text="${geometric.startTerms.startTerm}"></span></p>
+    <p>Знаменатель:       <span th:text="${geometric.step}"></span></p>
+    <p>Количество шагов:  <span th:text="${geometric.terms}"></span></p>
+
+    <a th:href="@{/startTerms/{id}(id=${geometric.startTerms.termId})}">Просмотреть связанный первичный шаг</a>
+  </body>
+</html>

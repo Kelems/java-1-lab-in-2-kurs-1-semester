@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Просмотр первичного шага</title>
+    </head>
+    <body>
+        <a href="/">На главную</a>
+        <h1>Просмотр первичного шага: <span th:text="${startTerms.termId}"></span></h1>
+
+        <p>Первичный шаг: <span th:text="${startTerms.startTerm}"></span></p>
+        <p>Название шага: <span th:text="${startTerms.startName}"></span></p>
+
+        <a href="/startTerms/list">Назад к списку</a>
+    </body>
+</html>

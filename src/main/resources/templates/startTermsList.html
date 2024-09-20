@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Список первичных шаговов</title>
+    </head>
+    <body>
+        <h1>Список первичных шаговов</h1>
+
+        <a href="/" class="button">На главную</a>
+        <a href="/startTerms/add" class="button">Добавить первичный шаг</a>
+
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Первичный шаг</th>
+                    <th>Просмотр строки</th>
+                    <th>Название первичного шага</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="startTerm : ${startTermsList}">
+                    <td th:text="${startTerm.termId}"></td>
+                    <td th:text="${startTerm.startTerm}"></td>
+                    <td th:text="${startTerm.startName}"></td>
+                    <td><a th:href="@{/startTerms/{id}(id=${startTerm.termId})}">Открыть</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

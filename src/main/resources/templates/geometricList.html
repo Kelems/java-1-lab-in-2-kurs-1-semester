@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Геометрические прогрессии</title>
+    </head>
+    <body>
+        <h1>Геометрические прогрессии</h1>
+
+        <a href="/" class="button">На главную</a><br>
+        <a href="/geometric/add" class="button">Добавить геометрическую прогрессию</a><br>
+
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ID первичного шага</th>
+                    <th>(Первичный шаг)</th>
+                    <th>Шаг</th>
+                    <th>Количество шагов</th>
+                    <th>Просмотр строки</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="geometric : ${geometricProgressions}">
+                    <td th:text="${geometric.geometricProgressionId}"></td>
+                    <td th:text="${geometric.startTerms.termId}"></td>
+                    <td th:text="${geometric.startTerms.startTerm}"></td>
+                    <td th:text="${geometric.step}"></td>
+                    <td th:text="${geometric.terms}"></td>
+                    <td><a th:href="@{/geometric/{id}(id=${geometric.geometricProgressionId})}">Открыть</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
